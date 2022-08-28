@@ -1,21 +1,24 @@
 package factory;
 
-import models.*;
-import service.Exchangeble;
-
+import models.currency.ArgentinePeso;
+import models.currency.ChileanPeso;
+import models.currency.Dollar;
+import models.currency.Euro;
+import models.user.InputUser;
+import service.exchangeService.CurrencyExchangeImpl;
 import java.util.Map;
 
 public class CurrencyExchangeFactory {
 
-    private final Map<String, Exchangeble> currency = Map.of(
-            "dolar", new Dollar(),
-            "euro", new Euro(),
-            "peso argentino", new ArgentinePeso(),
-            "peso chileno", new ChileanPeso()
+    private final Map<Integer, CurrencyExchangeImpl> currency = Map.of(
+            1, new Euro(),
+            2, new Dollar(),
+            3, new ArgentinePeso(),
+            4, new ChileanPeso()
     );
 
-    public Exchangeble getCurrency(User user) {
-        String currencyInput = user.getCurrency();
+    public CurrencyExchangeImpl getCurrency(InputUser inputUser) {
+        Integer currencyInput = inputUser.getCurrency();
         return this.currency.get(currencyInput);
     }
 }
