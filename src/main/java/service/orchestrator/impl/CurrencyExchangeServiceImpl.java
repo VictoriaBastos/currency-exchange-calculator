@@ -3,7 +3,7 @@ package service.orchestrator.impl;
 import factory.CurrencyExchangeFactory;
 import models.user.InputUser;
 import models.user.OutputUser;
-import service.exchangeService.CurrencyExchangeImpl;
+import service.exchangeService.CurrencyExchange;
 import service.orchestrator.CurrencyExchangeService;
 
 public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
@@ -15,7 +15,7 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
         this.currencyExchangeFactory = currencyExchangeFactory;
     }
 
-    private CurrencyExchangeImpl selectInputCurrency(InputUser input){
+    private CurrencyExchange selectInputCurrency(InputUser input){
         return this.currencyExchangeFactory.getCurrency(input);
     }
 

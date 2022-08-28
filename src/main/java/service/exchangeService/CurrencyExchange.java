@@ -2,7 +2,7 @@ package service.exchangeService;
 
 import models.user.InputUser;
 
-abstract public class CurrencyExchangeImpl implements Exchangeble {
+abstract public class CurrencyExchange implements Exchangeble {
 
     protected abstract Double getOperationalFee();
     protected abstract Double getPercentageOperationalFee();

@@ -1,8 +1,8 @@
 package models.currency;
 
-import service.exchangeService.CurrencyExchangeImpl;
+import service.exchangeService.CurrencyExchange;
 
-public class ArgentinePeso extends CurrencyExchangeImpl {
+public class ArgentinePeso extends CurrencyExchange{
     private final Double OPERATIONAL_FEE = 2.50;
     private final Double PERCENTAGE_OPERATIONAL_FEE = 0.015;
     private final Double QUOTE = 26.24;
